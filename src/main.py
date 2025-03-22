@@ -3,16 +3,16 @@ import mmap
 import multiprocessing
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
-
-def round_up(value):
-    return math.ceil(value * 10) / 10
+ 
+def round_up( value ):
+    return math.ceil( value * 10 ) / 10
 
 def initialize_city_data():
-    return [math.inf, -math.inf, 0.0, 0]
+    return [math.inf, -math.inf, 0.0, 0]  
 
 def process_sub_chunk(sub_chunk):
     city_data = defaultdict(initialize_city_data)
-    
+
     for line in sub_chunk.split(b'\n'):
         if not line:
             continue
