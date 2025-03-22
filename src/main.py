@@ -67,9 +67,7 @@ def main(input_filename="testcase.txt", output_filename="output.txt"):
     with multiprocessing.Pool(num_processes) as pool:
         tasks = [(input_filename, start, end) for start, end in chunks]
         results = pool.starmap(process_file_chunk, tasks)
-    
     final_data = merge_city_data(results)
-    
     output_lines = []
     for city in sorted(final_data.keys(), key=lambda c: c.decode()):
         min_score, max_score, total_score, count = final_data[city]
