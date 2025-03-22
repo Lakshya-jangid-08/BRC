@@ -70,8 +70,7 @@ def merge_city_data(data_list):
 def main(input_filename="testcase.txt", output_filename="output.txt"):
     with open(input_filename, "rb") as file:
         with mmap.mmap(file.fileno(), 0, access=mmap.ACCESS_READ) as memory_map:
-            file_size = len(memory_map)
-    
+            file_size = len(memory_map) 
     num_processes = multiprocessing.cpu_count() * 2
     chunk_size = file_size // num_processes
     chunks = [(i * chunk_size, (i + 1) * chunk_size if i < num_processes - 1 else file_size)
