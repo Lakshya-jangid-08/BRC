@@ -92,5 +92,5 @@ def main(input_filename="testcase.txt", output_filename="output.txt"):
         output_lines.append(f"{city.decode()}={round_up(min_score):.1f}/{average_score:.1f}/{round_up(max_score):.1f}\n")
     with open(output_filename, "w") as file:
         file.writelines(output_lines)
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
